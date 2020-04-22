@@ -26,4 +26,14 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  // route to go to charater page
+  app.get("/members/character", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/character.html"));
+  });
+
+  // route to go to generator page
+  app.get("/members/generator", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/generator.html"));
+  });
 };
