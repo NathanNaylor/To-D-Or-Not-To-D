@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    class: {
+    characterClass: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    languages: {
+    language: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

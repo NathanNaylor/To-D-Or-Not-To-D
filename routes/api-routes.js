@@ -50,4 +50,27 @@ module.exports = function(app) {
       });
     }
   });
+
+  // ROUTE TO POST CHARACTER DATA
+  app.post("/api/member/generator", function(req, res) {
+    if (!req.user) {
+      res.sendStatus(403);
+      return;
+    }
+    db.Character.create({
+      UserId: req.user.id,
+      name: req.body.name,
+      race: req.body.race,
+      characterClass: req.body.characterClass,
+      alignment: req.body.alignment,
+      language: req.body.language
+    })
+      .then(() => {
+        res.end();
+      })
+      .catch(error => {
+        res.sendStatus(500);
+        console.log(error);
+      });
+  });
 };
