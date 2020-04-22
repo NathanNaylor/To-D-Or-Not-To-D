@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,12 +24,53 @@
       <div class="col-md-6 col-md-offset-3">
         <h2>Hello <span class="member-name"></span> this is your character</h2>
         <h2>Welcome to generator page</h2>
+
+
+        <h2>Generate Form</h2>
+        <form class="login">
+          <!-- name -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Character Name</label>
+            <input type="text" class="form-control" id="name-input" placeholder="Name goes here">
+          </div>
+          <!-- race -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Character Race</label>
+            <input type="text" class="form-control" id="race-input" placeholder="Race goes here">
+          </div>
+          <!-- class -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Character Class</label>
+            <input type="text" class="form-control" id="class-input" placeholder="Class goes Here">
+          </div>
+          <!-- alignment -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Character Alignment</label>
+            <input type="text" class="form-control" id="alignment-input" placeholder="Alignment goes here">
+          </div>
+          <!-- languages -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Character Language</label>
+            <input type="text" class="form-control" id="language-input" placeholder="Language goes here">
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/generator.js"></script>
+  <script type="text/javascript" src="/js/generator.js"></script>
 
 </body>
 
