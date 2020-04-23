@@ -13,7 +13,7 @@ $(document).ready(function() {
       name: nameInput.val().trim(),
       race: raceInput.val().trim(),
       characterClass: characterClassInput.val().trim(),
-      alignment: alignmentInput.val().trim(),
+      alignment: alignmentInput.val().trim()
     };
     console.log(userData);
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
       userData.name,
       userData.race,
       userData.characterClass,
-      userData.alignment,
+      userData.alignment
     );
     nameInput.val("");
     raceInput.val("");
