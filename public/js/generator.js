@@ -55,4 +55,16 @@ $(document).ready(function() {
         console.log(err);
       });
   }
+  $.get("http://www.dnd5eapi.co/api/classes").then(function(data) {
+    $("#test").append(data.results[0].name);
+    console.log(data.results);
+  });
+  $.get("http://www.dnd5eapi.co/api/races").then(function(data) {
+    $("#test").append(data.results[0].name);
+    console.log(data.results);
+  });
+  $.get("http://www.dnd5eapi.co/api/spells").then(function(data) {
+    $("#test").append(data.results[0].name);
+    console.log(data.results);
+  });
 });

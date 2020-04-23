@@ -73,4 +73,12 @@ module.exports = function(app) {
         console.log(error);
       });
   });
+  // app.get("http://www.dnd5eapi.co/api/classes", function(req, res) {
+  //   if (!req.user) {
+  //     res.json({});
+  //   } else {
+  //     res.json({});
+  //     console.log(res);
+  //   }
+  // });
 };
