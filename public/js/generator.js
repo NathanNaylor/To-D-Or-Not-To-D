@@ -5,7 +5,6 @@ $(document).ready(function() {
   var raceInput = $("input#race-input");
   var characterClassInput = $("input#class-input");
   var alignmentInput = $("input#alignment-input");
-  var languageInput = $("input#language-input");
 
   // When the form is submitted, we validate there's an name and race entered
   loginForm.on("submit", function(event) {
@@ -14,8 +13,7 @@ $(document).ready(function() {
       name: nameInput.val().trim(),
       race: raceInput.val().trim(),
       characterClass: characterClassInput.val().trim(),
-      alignment: alignmentInput.val().trim(),
-      language: languageInput.val().trim()
+      alignment: alignmentInput.val().trim()
     };
     console.log(userData);
 
@@ -23,8 +21,7 @@ $(document).ready(function() {
       !userData.name ||
       !userData.race ||
       !userData.characterClass ||
-      !userData.alignment ||
-      !userData.language
+      !userData.alignment
     ) {
       return;
     }
@@ -34,24 +31,21 @@ $(document).ready(function() {
       userData.name,
       userData.race,
       userData.characterClass,
-      userData.alignment,
-      userData.language
+      userData.alignment
     );
     nameInput.val("");
     raceInput.val("");
     characterClassInput.val("");
     alignmentInput.val("");
-    languageInput.val("");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(name, race, characterClass, alignment, language) {
+  function loginUser(name, race, characterClass, alignment) {
     $.post("/api/member/generator", {
       name: name,
       race: race,
       characterClass: characterClass,
-      alignment: alignment,
-      language: language
+      alignment: alignment
     })
       .then(function() {
         window.location.replace("/members/character");
