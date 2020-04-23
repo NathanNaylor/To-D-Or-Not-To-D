@@ -36,14 +36,12 @@ $(document).ready(function() {
       userData.characterClass,
       userData.alignment,
       userData.language
-
     );
     nameInput.val("");
     raceInput.val("");
     characterClassInput.val("");
     alignmentInput.val("");
     languageInput.val("");
-
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
