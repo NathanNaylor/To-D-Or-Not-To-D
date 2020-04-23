@@ -6,34 +6,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+    </ul>
+  </div>
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+    <div class="pure-g" style="justify-content: center; text-align:center;;">
+
+      <div class="pure-u-md-1-3" style="display:inline-block;">
         <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
+        <form class="login pure-form pure-form-stacked" >
+          <fieldset>
+            <label for="email" style="text-align:left;">Email address</label>
+            <input type="email" class="pure-input-1" id="email-input" placeholder="Email">
+            <br>
+            <label for="password" style="text-align:left;">Password</label>
+            <input type="password" class="pure-input-1" id="password-input" placeholder="Password">
+            <br>
+            <button type="submit" class="pure-button pure-button-primary">Login</button>
+          </fieldset>
         </form>
         <br />
         <p>Or sign up <a href="/">here</a></p>
       </div>
+
     </div>
   </div>
 
