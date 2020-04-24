@@ -21,8 +21,6 @@ $(document).ready(function() {
         // make the name an h2,
         $("#new-character-" + i).text(data[0].Characters[i].name);
 
-
-
         var viewButton = $("<button>");
         viewButton.addClass("button-xlarge1");
         viewButton.addClass("pure-button");
