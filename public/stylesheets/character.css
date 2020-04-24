@@ -1,0 +1,154 @@
+body {
+    background-color: orange;
+}
+
+.container {
+    width: 100%;
+}
+
+
+#header {
+    text-align: center;
+}
+
+#basic-info {
+    text-align: center;
+}
+
+.intro {
+    border-style: solid;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#all-info {
+    text-align: center;
+}
+
+.c1value {
+    border-style: solid;
+    margin-bottom:0;
+    border-bottom:0;
+}
+
+.c1name {
+    border-style: solid;
+    margin-top: 0;
+}
+
+.c2st {
+    border-style: solid;
+    margin-bottom: 0;
+}
+.c2std {
+    border-style: solid;
+    border-top: 0;
+    margin-top: 0;
+}
+
+.c2s {
+    border-style: solid;
+    margin-bottom: 0;
+}
+.c2sd {
+    border-style: solid;
+    border-top: 0;
+    margin-top: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.c3stat {
+    border-style: solid;
+    margin-bottom: 0;
+    border-bottom: 0;
+    width: 90%;
+}
+
+.c3name {
+    border-style: solid;
+    margin-top: 0;
+    width: 90%;
+}
+
+.equalcenter {
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+.center {
+    text-align: center;
+}
+
+.equipment {
+    border-style: solid;
+    margin-bottom: 0;
+    border-bottom:0;
+    
+}
+.equipmentstats {
+    border-style: solid;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.weapons {
+    border-style: solid;
+    margin-top: 0;
+    border-top:0;
+    margin-bottom: 0;
+}
+
+.armor {
+    border-style: solid;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 0;
+}
+.armors {
+    border-style: solid;
+    margin-top: 0;
+    border-top:0;
+    margin-bottom: 0;
+   
+}
+
+.another {
+    border-style: solid;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 0;
+}
+
+.anothers {
+    border-style: solid;
+    margin-top: 0;
+    border-top:0;
+    margin-bottom: 0;
+}
+
+.spell {
+    border-style: solid;
+    margin-bottom: 0;
+}
+
+.spells{
+    border-style: solid;
+    border-top: 0;
+    margin-top: 0;
+}
+
+.attack {
+    border-style: solid;
+    margin-bottom: 0;
+}
+
+.attacks {
+    border-style: solid;
+    margin-top: 0;
+    border-top: 0;
+}
