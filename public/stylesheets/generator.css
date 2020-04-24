@@ -10,6 +10,7 @@ body{
 .generator1{
     justify-content: center;
     border: hidden;
+    text-decoration: underline;
 }
 .pure-g{justify-content: center;}
 
