@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password",
-=======
-    "password": "Password",
->>>>>>> f9c9f71e406fe6b2d94c15cc9625afa42e1deec6
     "database": "dnd_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
