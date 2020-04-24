@@ -6,6 +6,8 @@ $(document).ready(function() {
   let stats;
   let spells;
   let savingThrows;
+  let charData;
+  let statMod;
 
   $.get("/api/user_data").then(function(data) {
     // console.log(data);
@@ -23,10 +25,51 @@ $(document).ready(function() {
       $(".character-class").text(data[0].Characters[0].characterClass);
       $(".character-race").text(data[0].Characters[0].race);
       $(".character-alignment").text(data[0].Characters[0].alignment);
+      //append character stats to page
+      $(".STR").text(stats.STR);
+      $(".DEX").text(stats.DEX);
+      $(".CON").text(stats.CON);
+      $(".INT").text(stats.INT);
+      $(".WIS").text(stats.WIS);
+      $(".CHA").text(stats.CHA);
+      //append saving throw info to page
+      $(".strength").text(savingThrows.strength);
+      $(".dexterity").text(savingThrows.dexterity);
+      $(".constitution").text(savingThrows.constitution);
+      $(".inteligence").text(savingThrows.inteligence);
+      $(".wisdom").text(savingThrows.wisdom);
+      $(".charisma").text(savingThrows.charisma);
+      //append skills to page
+      $(".acrobatics").text(skills.acrobatics);
+      $(".animalHandling").text(skills.animalHandling);
+      $(".arcana").text(skills.arcana);
+      $(".athletics").text(skills.athletics);
+      $(".deception").text(skills.deception);
+      $(".history").text(skills.history);
+      $(".insight").text(skills.insight);
+      $(".intimidation").text(skills.intimidation);
+      $(".investigation").text(skills.investigation);
+      $(".medicine").text(skills.medicine);
+      $(".nature").text(skills.nature);
+      $(".perception").text(skills.perception);
+      $(".performance").text(skills.performance);
+      $(".persuasion").text(skills.persuasion);
+      $(".religion").text(skills.religion);
+      $(".sleightOfHand").text(skills.sleightOfHand);
+      $(".stealth").text(skills.stealth);
+      $(".survival").text(skills.survival);
+      //append some character data
+      $(".AC").text(charData.AC);
+      $(".HP").text(charData.HP);
+      $(".HD").text(charData.HD);
+      $(".INIT").text(charData.INIT);
+
+
       console.log(skills);
+      console.log(charData);
       console.log(stats);
-      console.log(spells);
       console.log(savingThrows);
+      console.log(spells);
     });
   }
   function classStats(charClass) {
@@ -39,6 +82,20 @@ $(document).ready(function() {
         INT: 8,
         WIS: 10,
         CHA: 12
+      };
+      statMod = {
+        STRMOD: "+2",
+        DEXMOD: "+1",
+        CONMOD: "+2",
+        INTMOD: "-1",
+        WISMOD: "0",
+        CHAMOD: "+1"
+      };
+      charData = {
+        AC: 13,
+        HP: 14,
+        HD: "1d12",
+        INIT: statMod.DEXMOD
       };
       skills = {
         acrobatics: "+1",
@@ -70,7 +127,7 @@ $(document).ready(function() {
       };
       spells = {};
       break;
-
+      //data case for the bard class
     case "Bard":
       stats = {
         STR: 8,
@@ -79,6 +136,20 @@ $(document).ready(function() {
         INT: 10,
         WIS: 12,
         CHA: 15
+      };
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+2",
+        CONMOD: "+1",
+        INTMOD: "0",
+        WISMOD: "+1",
+        CHAMOD: "+2"
+      };
+      charData = {
+        AC: 13,
+        HP: 9,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
       };
       skills = {
         acrobatics: "+2",
@@ -120,6 +191,7 @@ $(document).ready(function() {
         ]};
       break;
 
+      //data case for cleric stats
     case "Cleric":
       stats = {
         STR: 14,
@@ -128,6 +200,20 @@ $(document).ready(function() {
         INT: 10,
         WIS: 15,
         CHA: 13
+      };
+      statMod = {
+        STRMOD: "+2",
+        DEXMOD: "-1",
+        CONMOD: "+1",
+        INTMOD: "0",
+        WISMOD: "+2",
+        CHAMOD: "+1"
+      };
+      charData = {
+        AC: 15,
+        HP: 9,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
       };
       skills = {
         acrobatics: "-1",
@@ -179,6 +265,20 @@ $(document).ready(function() {
         WIS: 15,
         CHA: 13
       };
+      statMod = {
+        STRMOD: "+1",
+        DEXMOD: "-1",
+        CONMOD: "+2",
+        INTMOD: "0",
+        WISMOD: "+2",
+        CHAMOD: "+1"
+      };
+      charData = {
+        AC: 10,
+        HP: 10,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "-1",
         animalHandling: "+4",
@@ -228,6 +328,20 @@ $(document).ready(function() {
         WIS: 10,
         CHA: 13
       },
+      statMod = {
+        STRMOD: "+2",
+        DEXMOD: "-1",
+        CONMOD: "+2",
+        INTMOD: "+1",
+        WISMOD: "0",
+        CHAMOD: "+1"
+      };
+      charData = {
+        AC: 16,
+        HP: 12,
+        HD: "1d10",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "-1",
         animalHandling: "0",
@@ -270,6 +384,20 @@ $(document).ready(function() {
         WIS: 14,
         CHA: 10
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+2",
+        CONMOD: "+1",
+        INTMOD: "+1",
+        WISMOD: "+2",
+        CHAMOD: "0"
+      };
+      charData = {
+        AC: 13,
+        HP: 9,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+4",
         animalHandling: "2",
@@ -312,6 +440,20 @@ $(document).ready(function() {
         WIS: 10,
         CHA: 14
       };
+      statMod = {
+        STRMOD: "+2",
+        DEXMOD: "-1",
+        CONMOD: "+1",
+        INTMOD: "+1",
+        WISMOD: "0",
+        CHAMOD: "+2"
+      };
+      charData = {
+        AC: 16,
+        HP: 11,
+        HD: "1d10",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "-1",
         animalHandling: "0",
@@ -352,6 +494,20 @@ $(document).ready(function() {
         WIS: 14,
         CHA: 10
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+2",
+        CONMOD: "+1",
+        INTMOD: "+1",
+        WISMOD: "+2",
+        CHAMOD: "0"
+      };
+      charData = {
+        AC: 13,
+        HP: 11,
+        HD: "1d10",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+2",
         animalHandling: "+2",
@@ -392,6 +548,20 @@ $(document).ready(function() {
         WIS: 13,
         CHA: 14
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+2",
+        CONMOD: "0",
+        INTMOD: "+1",
+        WISMOD: "+1",
+        CHAMOD: "+2"
+      };
+      charData = {
+        AC: 13,
+        HP: 8,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+6",
         animalHandling: "+1",
@@ -432,6 +602,20 @@ $(document).ready(function() {
         WIS: 10,
         CHA: 15
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+1",
+        CONMOD: "+2",
+        INTMOD: "+1",
+        WISMOD: "0",
+        CHAMOD: "+2"
+      };
+      charData = {
+        AC: 11,
+        HP: 8,
+        HD: "1d6",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+1",
         animalHandling: "0",
@@ -474,6 +658,20 @@ $(document).ready(function() {
         WIS: 10,
         CHA: 15
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+1",
+        CONMOD: "+2",
+        INTMOD: "+1",
+        WISMOD: "0",
+        CHAMOD: "+2"
+      };
+      charData = {
+        AC: 12,
+        HP: 10,
+        HD: "1d8",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+1",
         animalHandling: "0",
@@ -516,6 +714,20 @@ $(document).ready(function() {
         WIS: 10,
         CHA: 12
       },
+      statMod = {
+        STRMOD: "-1",
+        DEXMOD: "+1",
+        CONMOD: "+2",
+        INTMOD: "+2",
+        WISMOD: "0",
+        CHAMOD: "+1"
+      };
+      charData = {
+        AC: 11,
+        HP: 8,
+        HD: "1d6",
+        INIT: statMod.DEXMOD
+      };
       skills = {
         acrobatics: "+1",
         animalHandling: "0",
