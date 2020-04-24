@@ -16,11 +16,23 @@
 .pure-u-1-3{
     width: 20.3333%;
 }
+.new-character-style {
+    display: block;
+    margin: auto;
+    margin-top: 1.68rem;
+}
 .button-xlarge1{
     background: rgb(28, 184, 65);
+    display: block;
+    margin: auto;
+    margin-top:.5rem;
 }
 .button-xlarge2{
     background: rgb(202, 60, 60);
+    margin: auto;
+    display: block;
+    margin: auto;
+    margin-top:.5rem;
 }
 body{background-color: lightsalmon;}
 .ddpic{background-image: url(https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_PHB.jpg);display: list-item;font-size: 150px;}
