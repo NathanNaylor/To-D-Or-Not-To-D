@@ -69,6 +69,7 @@ $(document).ready(function() {
         charisma: "+1"
       };
       spells = {};
+      console.log(data);
       break;
 
     case "Bard":
