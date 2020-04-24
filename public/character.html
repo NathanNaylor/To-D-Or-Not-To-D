@@ -7,35 +7,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
-  integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
-  <link href="/stylesheets/style.css" rel="stylesheet">
+    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+  <link href="/stylesheets/character.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </ul>
-  </div>
+  <!-- Nav Bar -->
   <div class="container">
     <div class="pure-g">
-      <div class="pure-u-md-1-3">
-        <h2>Hello <span class="member-name"></span> this is your character</h2>
-
-        <h3>Name: <span class="character-name"></span></h3>
-        <h3>Class: <span class="character-class"></span></h3>
-        <h3>Race: <span class="character-race"></span></h3>
-        <h3>Alignment: <span class="character-alignment"></span></h3>
-
+      <div class="pure-u-md-1">
+        <div class="pure-menu pure-menu-horizontal">
+          <ul class="pure-menu-list">
+            <a class="navbar-brand" href="/logout">
+              Logout
+            </a>
+            <a class="navbar-brand" href="/members">
+              Character Vault
+            </a>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/character.js"></script>
+  <!-- Header -->
+  <div id="header" class="container">
+    <div class="pure-g">
+      <div class="pure-u-sm-1 pure-u">
+        <h1> Viewing <span class="character-name"></span>'s Stats</h1>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Basic Data -->
+  <div id="basic-info" class="container">
+    <div class="pure-g">
+      <div class="pure-u-sm-1">
+        <h3 class= "intro">Name: <span class="character-name"></span> , Class: <span class="character-class"></span>, Race: <span
+            class="character-race"></span> Level: 1 , Alignment: Chaotic Evil ,</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL Stats -->
+  <div id="all-info" class="container">
+    <div class="pure-g">
+
+      <!-- Column 1 -->
+      <div class="pure-u-md-3-24 pure-u-sm-1 pure-u">
+
+        <div class="container">
+          <h3 class="c1value">8</h3>
+          <h4 class="c1name">strenght</h4>
+        </div>
+
+        <div class="container">
+          <h3 class="c1value">12</h3>
+          <h4 class="c1name">dexterity</h4>
+        </div>
+
+        <div class="container">
+
+          <h3 class="c1value">45</h3>
+          <h4 class="c1name">conviction</h4>
+        </div>
+
+        <div class="container">
+
+          <h3 class="c1value">23</h3>
+          <h4 class="c1name">intent</h4>
+        </div>
+
+        <div class="container">
+
+          <h3 class="c1value">36</h3>
+          <h4 class="c1name">wisdom</h4>
+        </div>
+
+        <div class="container">
+          <h3 class="c1value">97</h3>
+          <h4 class="c1name">chance</h4>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="pure-u-md-6-24 pure-u-sm-1 pure-u">
+        <div class="container">
+          <h3 class="c2st">Saving Throws</h3>
+          <h4 class="c2std">
+            <ul>
+              <li>Saving Throw One</li>
+              <li>Saving Throw Two</li>
+              <li>Saving Throw Three</li>
+              <li>Saving Throw Four</li>
+              <li>Saving Throw Five</li>
+              <li>Saving Throw Six</li>
+            </ul>
+          </h4>
+        </div>
+
+        <div class="container">
+          <h3 class="c2s">Skills</h3>
+          <h4 class="c2sd">
+            <ul>
+              <li>Skill One</li>
+              <li>Skill Two</li>
+              <li>Skill Three</li>
+              <li>Skill Four</li>
+              <li>Skill Five</li>
+              <li>Skill Six</li>
+              <li>Skill Seven</li>
+              <li>Skill Eight</li>
+              <li>Skill Nine</li>
+              <li>Skill Ten</li>
+              <li>Skill Eleven</li>
+              <li>Skill Twelve</li>
+              <li>Skill Thirteen</li>
+              <li>Skill Fourteen</li>
+              <li>Skill Fifteen</li>
+              <li>Skill Sixteen</li>
+              <li>Skill Seventeen</li>
+              <li>Skill Eighteen</li>
+            </ul>
+          </h4>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="pure-u-md-8-24 pure-u-sm-1 pure-u">
+        <div class="pure-g">
+          <div class="container">
+            <div class="pure-u-md-8-24 ">
+
+              <h3 class="c3stat">34</h3>
+              <h4 class="c3name">accuracy</h4>
+              <h3 class="c3stat">95</h3>
+              <h4 class="c3name">pro</h4>
+
+            </div>
+
+
+
+            <div class="pure-u-md-8-24 ">
+              <h3 class="c3stat">93</h3>
+              <h4 class="c3name">hp</h4>
+              <h3 class="c3stat">87</h3>
+              <h4 class="c3name">hit di</h4>
+
+            </div>
+
+
+
+            <div class="pure-u-md-8-24 ">
+              <h3 class="c3stat">76</h3>
+              <h4 class="c3name">init</h4>
+              <h3 class="c3stat">34</h3>
+              <h4 class="c3name">spee</h4>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="pure-g">
+          <div class="container center">
+            <div class="pure-u-md-1">
+              <div class="container">
+              <h3 class= "equipment">Equipment</h3>
+
+                <h4 class = "equipmentstats">Weapons</h4>
+                <h5 class = "weapons">
+                  <ul>
+                      <li>Weapon1</li>
+                      <li>Weapon2</li>
+                  </ul>
+                </h5>
+                
+                <h4 class = "armor">Armor</h4>
+                <h5 class = "armors">
+                  <ul>
+                    <li>Armor1</li>
+                    <li>Armor2</li>
+                  </ul>
+                </h5>
+                <h4 class = "another">Another?</h4>
+                <h5 class = "anothers">
+                  <ul>
+                    <li>Extra1</li>
+                    <li>Extra2</li>
+                  </ul>
+                </h5>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <!-- Column 4 -->
+        <div class="pure-u-md-7-24 pure-u-sm-1 pure-u">
+          <div class="container">
+            <h3 class="spell">Spells</h3>
+            <h4 class="spells">
+              <ul>
+                <li>Spell1</li>
+                <li>Spell2</li>
+              </ul>
+            </h4>
+          </div>
+  
+          <div class="container">
+            <h3 class="attack">Attack</h3>
+            <h4 class="attacks">
+              <ul>
+                <li>Attack1</li>
+                <li>Attack2</li>
+                <li>Attack3</li>
+              </ul>
+            </h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/character.js"></script>
 
 </body>
 
