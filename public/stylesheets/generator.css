@@ -1,0 +1,25 @@
+body{
+    background-color: orange;
+}
+.generator{
+    justify-content: center;
+    border: double;
+    text-align: center;
+}
+.generator1{
+    justify-content: center;
+    border: solid;
+}
+.pure-g{justify-content: center;}
+
+h3{text-align: center;}
+h4{
+    border: solid;
+    font-size: 27px;
+}
+h5{
+    border: solid;
+    margin-top: -13px;
+    /* margin-bottom: -10px; */
+    font-size: 17px;
+}
