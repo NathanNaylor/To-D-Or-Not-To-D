@@ -1,5 +1,6 @@
-/* sign up */
+/* login form title*/
 h2{font-size: 32px;color: yellow;}
+
 /* background coloring */
 .background{background-color: black;}
 body{background-image: url(https://img2.wantitall.co.za/prodimages/graphics-more-dungeon-dice-pattern-for-fighting-dragons-premium-kraft-roll-gift-wrap-wrapping-paper__51ZXw9OImXL.jpg);background-repeat: no-repeat;background-position: center; background-color: black;}
@@ -7,5 +8,7 @@ body{background-image: url(https://img2.wantitall.co.za/prodimages/graphics-more
 /* inside container */
 .label{color: yellow;}
 .pure-form fieldset{margin: 24px;}
+
+/* sign up here at bottom */
 p{color: yellow;}
 a{color: aliceblue;}
