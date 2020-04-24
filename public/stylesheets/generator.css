@@ -1,25 +1,34 @@
 body{
-    background-color: orange;
+    background-color: lightsteelblue;
 }
 .generator{
     justify-content: center;
     border: double;
     text-align: center;
+    font-weight: bold;
 }
 .generator1{
     justify-content: center;
-    border: solid;
+    border: hidden;
 }
 .pure-g{justify-content: center;}
 
-h3{text-align: center;}
-h4{
+header{background-image: url(https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_MM.jpg);display: list-item;font-size:150px ;}
+h4{text-align: center;}
+
+h5{
     border: solid;
     font-size: 27px;
 }
-h5{
+h6{
     border: solid;
     margin-top: -13px;
     /* margin-bottom: -10px; */
     font-size: 17px;
 }
+.dnd{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);height: 380px;
+    display:list-item; height: 204px; width: 800px; margin-left: 168px;
+
+}
+footer{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);font-size: 86px;display: list-item; margin-top: 593px; position: sticky;}
+
