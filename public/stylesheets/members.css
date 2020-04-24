@@ -1,5 +1,13 @@
 .member-name{
     font-size: 22px;
+    text-align: center;
+    margin-left: 470px;
+}
+.cVault{
+    justify-content: center;
+    border: double;
+    text-align: center;
+    font-weight: bold;
 }
 .pure-g{
     justify-content: center;
@@ -14,4 +22,6 @@
 .button-xlarge2{
     background: rgb(202, 60, 60);
 }
-body{background-color: orange;}
+body{background-color: lightsalmon;}
+.ddpic{background-image: url(https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_PHB.jpg);display: list-item;font-size: 150px;}
+footer{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);font-size: 86px;display: list-item; margin-top: 593px; position: sticky;}
