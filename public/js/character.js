@@ -8,6 +8,8 @@ $(document).ready(function() {
   let savingThrows;
   let charData;
   let statMod;
+  let query;
+  const equipmentList = [];
 
   $.get("/api/user_data").then(function(data) {
     // console.log(data);
@@ -21,6 +23,7 @@ $(document).ready(function() {
     $.get("/api/user_data/" + userID, function(data) {
       console.log(data);
       classStats(data[0].Characters[0].characterClass);
+      classEquipment(data[0].Characters[0].characterClass);
       $(".character-name").text(data[0].Characters[0].name);
       $(".character-class").text(data[0].Characters[0].characterClass);
       $(".character-race").text(data[0].Characters[0].race);
@@ -72,6 +75,115 @@ $(document).ready(function() {
       console.log(spells);
     });
   }
+  function classEquipment(charClass) {
+    classUrl(charClass);
+    $.get("http://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
+      switch (charClass) {
+      case "Barbarian":
+        
+        break;
+    
+      case "Bard":
+        
+        break;
+    
+      case "Cleric":
+        
+        break;
+      
+      case "Druid":
+        
+        break;
+      
+      case "Fighter":
+        
+        break;
+      
+      case "Monk":
+        
+        break;
+      
+      case "Paladin":
+        
+        break;
+      
+      case "Ranger":
+        
+        break;
+      
+      case "Rogue":
+        
+        break;
+      
+      case "Sorcerer":
+        
+        break;
+      
+      case "Warlock":
+        
+        break;
+      
+      case "Wizard":
+        
+        break;
+      }
+    });
+  }
+
+  //switch case to set the query based on selected class
+  function classUrl(charClass) {
+    switch (charClass) {
+    case "Barbarian":
+      query = "barbarian";
+      break;
+
+    case "Bard":
+      query = "bard";
+      break;
+
+    case "Cleric":
+      query = "cleric";
+      break;
+  
+    case "Druid":
+      query = "druid";
+      break;
+  
+    case "Fighter":
+      query = "fighter";
+      break;
+  
+    case "Monk":
+      query = "monk";
+      break;
+  
+    case "Paladin":
+      query = "paladin";
+      break;
+  
+    case "Ranger":
+      query = "ranger";
+      break;
+  
+    case "Rogue":
+      query = "rogue";
+      break;
+  
+    case "Sorcerer":
+      query = "sorcerer";
+      break;
+  
+    case "Warlock":
+      query = "warlock";
+      break;
+  
+    case "Wizard":
+      query = "wizard";
+      break;
+    }
+  }
+
+  //switch case with values based off of the selected class
   function classStats(charClass) {
     switch (charClass) {
     case "Barbarian":
