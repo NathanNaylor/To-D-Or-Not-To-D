@@ -9,7 +9,9 @@ $(document).ready(function() {
   let charData;
   let statMod;
   let query;
-  const equipmentList = [];
+  let armor;
+  const weaponsList = [];
+  const miscEquipment = [];
 
   $.get("/api/user_data").then(function(data) {
     // console.log(data);
@@ -78,55 +80,120 @@ $(document).ready(function() {
   function classEquipment(charClass) {
     classUrl(charClass);
     $.get("http://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
+      console.log(data);
       switch (charClass) {
       case "Barbarian":
-        
+        armor = "none";
+        miscEquipment.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.starting_equipment[1].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        miscEquipment.push(data.choice_2[0].from[0].item.name);
         break;
     
       case "Bard":
-        
+        armor = data.starting_equipment[0].item.name;
+        weaponsList.push(data.starting_equipment[1].item.name);
+        miscEquipment.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        miscEquipment.push(data.choice_2[1].from[0].item.name);
+        miscEquipment.push(data.choice_3[1].from[7].item.name);
         break;
     
       case "Cleric":
-        
+        armor = data.choice_2[0].from[0].item.name;
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_1[1].from[0].item.name);
+        weaponsList.push(data.choice_3[0].from[0].item.name);
+        miscEquipment.push(data.choice_4[0].from[0].item.name);
+        miscEquipment.push(data.choice_5[0].from[1].item.name);
         break;
       
       case "Druid":
-        
+        armor = data.starting_equipment[0].item.name;
+        miscEquipment.push(data.starting_equipment[1].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsList.push(data.choice_2[1].from[7].item.name);
+        miscEquipment.push(data.choice_3[0].from[1].item.name);
         break;
       
       case "Fighter":
-        
+        armor = data.choice_1[0].from[0].item.name;
+        weaponsList.push(data.choice_2[0].from[0].item.name);
+        weaponsList.push(data.choice_3[0].from[0].item.name);
+        miscEquipment.push(data.choice_4[1].from[0].item.name);
+        weaponsList.push(data.choice_5[0].from[4].item.name);
         break;
       
       case "Monk":
-        
+        armor = "none";
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_1[1].from[7].item.name);
+        miscEquipment.push(data.choice_2[1].from[0].item.name);
         break;
       
       case "Paladin":
-        
+        armor = data.starting_equipment[0].item.name;
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsList.push(data.choice_2[0].from[0].item.name);
+        miscEquipment.push(data.choice_3[1].from[0].item.name);
+        miscEquipment.push(data.choice_4[0].from[2].item.name);
+        weaponsList.push(data.choice_5[0].from[3].item.name);
         break;
       
       case "Ranger":
-        
+        armor = data.choice_2[1].from[0].item.name;
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_2[0].from[0].item.name);
+        miscEquipment.push(data.choice_3[1].from[0].item.name);
         break;
       
       case "Rogue":
-        
+        armor = data.starting_equipment[0].item.name;
+        weaponsList.push(data.starting_equipment[1].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsList.push(data.choice_2[1].from[0].item.name);
+        weaponsList.push(data.choice_2[1].from[0].item.name);
+        miscEquipment.push(data.starting_equipment[2].item.name);
+        miscEquipment.push(data.choice_3[0].from[0].item.name);
         break;
       
       case "Sorcerer":
-        
+        armor = "none";
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsList.push(data.choice_2[1].from[3].item.name);
+        miscEquipment.push(data.choice_3[0].from[1].item.name);
         break;
       
       case "Warlock":
-        
+        armor = data.starting_equipment[1].item.name;
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.starting_equipment[0].item.name);
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsList.push(data.choice_4[0].from[3].item.name);
+        miscEquipment.push(data.choice_2[1].from[2].item.name);
+        miscEquipment.push(data.choice_3[0].from[0].item.name);
         break;
       
       case "Wizard":
-        
+        armor = "none";
+        weaponsList.push(data.choice_1[0].from[0].item.name);
+        miscEquipment.push(data.starting_equipment[0].item.name);
+        miscEquipment.push(data.choice_2[0].from[0].item.name);
+        miscEquipment.push(data.choice_2[0].from[0].item.name);
+        miscEquipment.push(data.choice_3[0].from[0].item.name);
         break;
       }
+    }).then(() => {
+      weaponsList.forEach(element => {
+        $(".weaponsList").append("<li>" + element + "</li>");
+      });
+      miscEquipment.forEach(element => {
+        $(".miscEquipment").append("<li>" + element + "</li>");
+      });
+      $(".charArmor").text(armor);
+
     });
   }
 
