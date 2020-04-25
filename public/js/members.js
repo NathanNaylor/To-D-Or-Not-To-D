@@ -1,24 +1,44 @@
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+
+  init();
+
+  function init() {
+    $.get("/api/user_data").then(function(data) {
+      $(".member-name").text(data.email);
+      getCharacters(data.id);
+    });
+  }
+
   $(document).on("click", ".button-xlarge2", handlePostDelete);
   $(document).on("click", ".button-xlarge1", handleView);
 
   function handleView() {
     var clickedId = $(this).data("id");
+    console.log(clickedId);
     window.location.href = "/members/character/" + clickedId;
   }
 
   function handlePostDelete() {
-    var currentCharacter = $(this).data("id");
+    let currentCharacter = $(this).data("id");
     console.log(currentCharacter);
-    alert("I was clicked");
+    $.get("/api/user_data/1")
+      .then(function(data) {
+        return data[0].Characters[currentCharacter].id;
+      })
+      .then(data => {
+        console.log(data);
+        deletePost(data);
+      });
   }
 
-  $.get("/api/user_data").then(function(data) {
-    $(".member-name").text(data.email);
-    getCharacters(data.id);
-  });
+  function deletePost(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/members/character/" + id
+    }).then(location.reload(true));
+  }
 
   function getCharacters(userID) {
     $.get("/api/user_data/" + userID, function(data) {
