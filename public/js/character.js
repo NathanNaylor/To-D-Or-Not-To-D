@@ -23,7 +23,7 @@ $(document).ready(function() {
     charID = window.location.href;
     //Use for non heroku
     // charID = charID.substr(40);
-    charID = charID.substr(56);
+    charID = charID.substr(57);
     console.log(charID);
     getCharacters(data.id, charID);
   });
