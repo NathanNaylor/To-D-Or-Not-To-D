@@ -104,4 +104,20 @@ module.exports = function(app) {
     });
     // }
   });
+
+  app.get("/api/members/character/:id", function(req, res) {
+    // if (!req.user) {
+    //   res.sendStatus(403);
+    //   return;
+    // } else {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: db.Character
+    }).then(data => {
+      res.json(data.Characters[0]);
+    });
+    // }
+  });
 };
