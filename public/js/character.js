@@ -21,7 +21,9 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     console.log(window.location.href);
     charID = window.location.href;
-    charID = charID.substr(40);
+    //Use for non heroku
+    // charID = charID.substr(40);
+    charID = charID.substr(56);
     console.log(charID);
     getCharacters(data.id, charID);
   });
