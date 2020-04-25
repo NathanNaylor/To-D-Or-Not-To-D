@@ -25,7 +25,7 @@ $(document).ready(function() {
 
   $(document).on("click",".spellsAlert", function(){
     const QUERYURL = this.getAttribute("data-value");
-    $.get("http://www.dnd5eapi.co" + QUERYURL, function(data) {
+    $.get("https://www.dnd5eapi.co" + QUERYURL, function(data) {
       console.log(data);
       $(".spell-description").text("Description: ");
       data.desc.forEach(element => {
@@ -101,7 +101,7 @@ $(document).ready(function() {
 
   //TODO: add functionality to select spells from spell list
   function getSpells(className) {
-    $.get("http://www.dnd5eapi.co/api/classes/" + className + "/spells", function(data) {
+    $.get("https://www.dnd5eapi.co/api/classes/" + className + "/spells", function(data) {
       console.log(data);
       switch(className){
       case "bard":
@@ -190,7 +190,7 @@ $(document).ready(function() {
 
   function getAttacks() {
     weaponsURL.forEach(element => {
-      $.get("http://www.dnd5eapi.co" + element, function(data){
+      $.get("https://www.dnd5eapi.co" + element, function(data){
         console.log(data);
 
         attackLi = "<li>" + data.name + ": " + 
@@ -205,7 +205,7 @@ $(document).ready(function() {
 
   function classEquipment(charClass) {
     classUrl(charClass);
-    $.get("http://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
+    $.get("https://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
       console.log(data);
       switch (charClass) {
       case "Barbarian":
