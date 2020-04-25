@@ -97,4 +97,19 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.delete("/api/members/character/:id", function(req, res) {
+    // if (!req.user) {
+    //   res.sendStatus(403);
+    //   return;
+    // } else {
+    db.Character.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(data => {
+      res.json(data);
+    });
+    // }
+  });
 };
