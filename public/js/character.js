@@ -4,7 +4,6 @@ $(document).ready(function() {
   // and updates the HTML on the page
   let spellLi;
   let i = 0;
-  let j = 0
   let skills;
   let stats;
   let spells;
