@@ -3,6 +3,7 @@ $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   let spellLi;
+  let charID;
   let i = 0;
   let skills;
   let stats;
@@ -18,9 +19,11 @@ $(document).ready(function() {
   const miscEquipment = [];
 
   $.get("/api/user_data").then(function(data) {
-    // console.log(data);
-
-    getCharacters(data.id);
+    console.log(window.location.href);
+    charID = window.location.href;
+    charID = charID.substr(40);
+    console.log(charID);
+    getCharacters(data.id, charID);
   });
 
   $(document).on("click",".spellsAlert", function(){
@@ -39,16 +42,16 @@ $(document).ready(function() {
   });
   // getCharacters();
 
-  function getCharacters(userID) {
+  function getCharacters(userID, id) {
     $.get("/api/user_data/" + userID, function(data) {
       console.log(data);
-      classStats(data[0].Characters[0].characterClass);
-      classEquipment(data[0].Characters[0].characterClass);
+      classStats(data[0].Characters[id].characterClass);
+      classEquipment(data[0].Characters[id].characterClass);
 
-      $(".character-name").text(data[0].Characters[0].name);
-      $(".character-class").text(data[0].Characters[0].characterClass);
-      $(".character-race").text(data[0].Characters[0].race);
-      $(".character-alignment").text(data[0].Characters[0].alignment);
+      $(".character-name").text(data[0].Characters[id].name);
+      $(".character-class").text(data[0].Characters[id].characterClass);
+      $(".character-race").text(data[0].Characters[id].race);
+      $(".character-alignment").text(data[0].Characters[id].alignment);
       //append character stats to page
       $(".STR").text(stats.STR);
       $(".DEX").text(stats.DEX);

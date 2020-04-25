@@ -48,7 +48,7 @@ $(document).ready(function() {
       alignment: alignment
     })
       .then(function() {
-        window.location.replace("/members/character");
+        window.location.replace("/members");
         // If there's an error, log the error
       })
       .catch(function(err) {
