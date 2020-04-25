@@ -2,15 +2,19 @@
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+  let spellLi;
+  let i = 0;
   let skills;
   let stats;
   let spells;
+  let spellsURL;
   let savingThrows;
   let charData;
   let statMod;
   let query;
   let armor;
   const weaponsList = [];
+  const weaponsURL = [];
   const miscEquipment = [];
 
   $.get("/api/user_data").then(function(data) {
@@ -19,6 +23,20 @@ $(document).ready(function() {
     getCharacters(data.id);
   });
 
+  $(document).on("click",".spellsAlert", function(){
+    const QUERYURL = this.getAttribute("data-value");
+    $.get("https://www.dnd5eapi.co" + QUERYURL, function(data) {
+      console.log(data);
+      $(".spell-description").text("Description: ");
+      data.desc.forEach(element => {
+        $(".spell-description").append(element + "<br>");
+      });
+      $(".spell-name").text("Name: " + data.name);
+      $(".spell-range").text("Range: " + data.range);
+      $(".spell-duration").text("Duration: " + data.duration);
+      
+    });
+  });
   // getCharacters();
 
   function getCharacters(userID) {
@@ -26,6 +44,7 @@ $(document).ready(function() {
       console.log(data);
       classStats(data[0].Characters[0].characterClass);
       classEquipment(data[0].Characters[0].characterClass);
+
       $(".character-name").text(data[0].Characters[0].name);
       $(".character-class").text(data[0].Characters[0].characterClass);
       $(".character-race").text(data[0].Characters[0].race);
@@ -70,16 +89,123 @@ $(document).ready(function() {
       $(".INIT").text(charData.INIT);
 
 
+
       console.log(skills);
       console.log(charData);
       console.log(stats);
       console.log(savingThrows);
       console.log(spells);
+      console.log(weaponsURL);
     });
   }
+
+  //TODO: add functionality to select spells from spell list
+  function getSpells(className) {
+    $.get("https://www.dnd5eapi.co/api/classes/" + className + "/spells", function(data) {
+      console.log(data);
+      switch(className){
+      case "bard":
+        spells = {
+          cantrips: [data.results[6].name, data.results[8].name],
+          levelOne: [data.results[17].name, data.results[11].name, data.results[16].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[6].url, data.results[8].url],
+          levelOne: [data.results[17].url, data.results[11].url, data.results[16].url]
+        };
+        break;
+      case "cleric":
+        spells = {
+          cantrips: [data.results[4].name, data.results[5].name, data.results[6].name],
+          levelOne: [data.results[12].name, data.results[21].name, data.results[22].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[4].url, data.results[5].url, data.results[6].url],
+          levelOne: [data.results[12].url, data.results[21].url, data.results[22].url]
+        };
+        break;
+      case "druid":
+        spells = {
+          cantrips: [data.results[5].name, data.results[3].name],
+          levelOne: [data.results[13].name, data.results[18].name, data.results[21].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[5].url, data.results[3].url],
+          levelOne: [data.results[13].url, data.results[18].url, data.results[21].url]
+        };
+        break;
+      case "sorcerer":
+        spells = {
+          cantrips: [data.results[3].name, data.results[4].name, data.results[5].name, data.results[10].name],
+          levelOne: [data.results[27].name, data.results[30].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[3].url, data.results[4].url, data.results[5].url, data.results[10].url],
+          levelOne: [data.results[27].url, data.results[30].url]
+        };
+        break;
+      case "warlock":
+        spells = {
+          cantrips: [data.results[1].name, data.results[5].name],
+          levelOne: [data.results[7].name, data.results[10].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[1].url, data.results[5].url],
+          levelOne: [data.results[7].url, data.results[10].url]
+        };
+        break;
+      case "wizard":
+        spells = {
+          cantrips: [data.results[5].name, data.results[3].name, data.results[10].name],
+          levelOne: [data.results[16].name, data.results[26].name, data.results[17].name, data.results[19].name, data.results[34].name, data.results[23].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[5].url, data.results[3].url, data.results[10].url],
+          levelOne: [data.results[16].url, data.results[26].url, data.results[17].url, data.results[19].url, data.results[34].url, data.results[23].url]
+        };
+        break;
+      }
+      
+    }).then(() => {
+      //each new element should have a function to serve the spells description via alert
+      //using the matching spellsURL
+      $(".charSpells").append("<h4> Cantrips </h4>");
+      spells.cantrips.forEach(element => {
+        console.log(spellsURL.cantrips);
+        //create an element for each selected spell
+        spellLi = "<li class='spellsAlert' data-value="+ spellsURL.cantrips[i] +">" + element + "</li>";
+        $(".charSpells").append(spellLi);
+
+        i++;
+      });
+      i = 0;
+      $(".charSpells").append("<h4> Level One Spells </h4>");
+      spells.levelOne.forEach(element => {
+
+        $(".charSpells").append("<li class='spellsAlert' data-value="+ spellsURL.levelOne[i] +">"+ element + "</li>");
+        i++;
+      });
+    });
+  }
+
+  function getAttacks() {
+    weaponsURL.forEach(element => {
+      $.get("https://www.dnd5eapi.co" + element, function(data){
+        console.log(data);
+
+        attackLi = "<li>" + data.name + ": " + 
+        data.damage.damage_dice + " " + data.damage.damage_type.name + 
+        " Damage" + "</li>";
+
+        $(".charAttacks").append(attackLi);
+      });
+    });
+
+  }
+
   function classEquipment(charClass) {
     classUrl(charClass);
-    $.get("http://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
+    $.get("https://www.dnd5eapi.co/api/classes/" + query + "/starting-equipment", function(data) {
       console.log(data);
       switch (charClass) {
       case "Barbarian":
@@ -87,14 +213,18 @@ $(document).ready(function() {
         miscEquipment.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.starting_equipment[1].item.name);
         weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsURL.push(data.starting_equipment[1].item.url);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
         miscEquipment.push(data.choice_2[0].from[0].item.name);
         break;
     
       case "Bard":
         armor = data.starting_equipment[0].item.name;
         weaponsList.push(data.starting_equipment[1].item.name);
-        miscEquipment.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsURL.push(data.starting_equipment[1].item.url);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        miscEquipment.push(data.starting_equipment[0].item.name);
         miscEquipment.push(data.choice_2[1].from[0].item.name);
         miscEquipment.push(data.choice_3[1].from[7].item.name);
         break;
@@ -104,15 +234,20 @@ $(document).ready(function() {
         weaponsList.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_1[1].from[0].item.name);
         weaponsList.push(data.choice_3[0].from[0].item.name);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.choice_1[1].from[0].item.url);
+        weaponsURL.push(data.choice_3[0].from[0].item.url);
         miscEquipment.push(data.choice_4[0].from[0].item.name);
         miscEquipment.push(data.choice_5[0].from[1].item.name);
         break;
       
       case "Druid":
         armor = data.starting_equipment[0].item.name;
-        miscEquipment.push(data.starting_equipment[1].item.name);
         weaponsList.push(data.choice_1[0].from[0].item.name);
         weaponsList.push(data.choice_2[1].from[7].item.name);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        weaponsURL.push(data.choice_2[1].from[7].item.url);
+        miscEquipment.push(data.starting_equipment[1].item.name);
         miscEquipment.push(data.choice_3[0].from[1].item.name);
         break;
       
@@ -120,14 +255,19 @@ $(document).ready(function() {
         armor = data.choice_1[0].from[0].item.name;
         weaponsList.push(data.choice_2[0].from[0].item.name);
         weaponsList.push(data.choice_3[0].from[0].item.name);
-        miscEquipment.push(data.choice_4[1].from[0].item.name);
         weaponsList.push(data.choice_5[0].from[4].item.name);
+        weaponsURL.push(data.choice_2[0].from[0].item.url);
+        weaponsURL.push(data.choice_3[0].from[0].item.url);
+        weaponsURL.push(data.choice_5[0].from[4].item.url);
+        miscEquipment.push(data.choice_4[1].from[0].item.name);
         break;
       
       case "Monk":
         armor = "none";
         weaponsList.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_1[1].from[7].item.name);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.choice_1[1].from[7].item.url);
         miscEquipment.push(data.choice_2[1].from[0].item.name);
         break;
       
@@ -135,15 +275,20 @@ $(document).ready(function() {
         armor = data.starting_equipment[0].item.name;
         weaponsList.push(data.choice_1[0].from[0].item.name);
         weaponsList.push(data.choice_2[0].from[0].item.name);
+        weaponsList.push(data.choice_5[0].from[3].item.name);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        weaponsURL.push(data.choice_2[0].from[0].item.url);
+        weaponsURL.push(data.choice_5[0].from[3].item.url);
         miscEquipment.push(data.choice_3[1].from[0].item.name);
         miscEquipment.push(data.choice_4[0].from[2].item.name);
-        weaponsList.push(data.choice_5[0].from[3].item.name);
         break;
       
       case "Ranger":
         armor = data.choice_2[1].from[0].item.name;
         weaponsList.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_2[0].from[0].item.name);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.choice_2[0].from[0].item.url);
         miscEquipment.push(data.choice_3[1].from[0].item.name);
         break;
       
@@ -153,6 +298,10 @@ $(document).ready(function() {
         weaponsList.push(data.choice_1[0].from[0].item.name);
         weaponsList.push(data.choice_2[1].from[0].item.name);
         weaponsList.push(data.choice_2[1].from[0].item.name);
+        weaponsURL.push(data.starting_equipment[1].item.url);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        weaponsURL.push(data.choice_2[1].from[0].item.url);
+        weaponsURL.push(data.choice_2[1].from[0].item.url);
         miscEquipment.push(data.starting_equipment[2].item.name);
         miscEquipment.push(data.choice_3[0].from[0].item.name);
         break;
@@ -163,6 +312,10 @@ $(document).ready(function() {
         weaponsList.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_1[0].from[0].item.name);
         weaponsList.push(data.choice_2[1].from[3].item.name);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        weaponsURL.push(data.choice_2[1].from[3].item.url);
         miscEquipment.push(data.choice_3[0].from[1].item.name);
         break;
       
@@ -172,6 +325,10 @@ $(document).ready(function() {
         weaponsList.push(data.starting_equipment[0].item.name);
         weaponsList.push(data.choice_1[0].from[0].item.name);
         weaponsList.push(data.choice_4[0].from[3].item.name);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.starting_equipment[0].item.url);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
+        weaponsURL.push(data.choice_4[0].from[3].item.url);
         miscEquipment.push(data.choice_2[1].from[2].item.name);
         miscEquipment.push(data.choice_3[0].from[0].item.name);
         break;
@@ -179,6 +336,7 @@ $(document).ready(function() {
       case "Wizard":
         armor = "none";
         weaponsList.push(data.choice_1[0].from[0].item.name);
+        weaponsURL.push(data.choice_1[0].from[0].item.url);
         miscEquipment.push(data.starting_equipment[0].item.name);
         miscEquipment.push(data.choice_2[0].from[0].item.name);
         miscEquipment.push(data.choice_2[0].from[0].item.name);
@@ -186,6 +344,7 @@ $(document).ready(function() {
         break;
       }
     }).then(() => {
+      getAttacks();
       weaponsList.forEach(element => {
         $(".weaponsList").append("<li>" + element + "</li>");
       });
@@ -304,7 +463,13 @@ $(document).ready(function() {
         wisdom: "0",
         charisma: "+1"
       };
-      spells = {};
+      spells = {
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]};
       console.log(data);
       break;
       //data case for the bard class
@@ -359,16 +524,7 @@ $(document).ready(function() {
         wisdom: "+1",
         charisma: "+4"
       };
-      spells = {
-        cantrips: [
-          "Prestidigitation",
-          "Vicious Mockery"
-        ],
-        levelOne: [
-          "Healing Word",
-          "Charm Person",
-          "Feather Fall"
-        ]};
+      getSpells("bard");
       break;
 
       //data case for cleric stats
@@ -423,17 +579,7 @@ $(document).ready(function() {
         wisdom: "+4",
         charisma: "+3"
       };
-      spells = {
-        cantrips: [
-          "Sacred Flame",
-          "Spare The Dying",
-          "Thaumaturgy"
-        ],
-        levelOne: [
-          "Cure Wounds",
-          "Shield Of Faith",
-          "Sanctuary"
-        ]};
+      getSpells("cleric");
       break;
 
     case "Druid":
@@ -487,16 +633,7 @@ $(document).ready(function() {
         wisdom: "+4",
         charisma: "+1"
       };
-      spells = {
-        cantrips: [
-          "Shillelagh",
-          "Poison Spray"
-        ],
-        levelOne: [
-          "Faerie Fire",
-          "Longstrider",
-          "Thunderwave"
-        ]};
+      getSpells("druid");
       break;
 
     case "Fighter":
@@ -551,8 +688,12 @@ $(document).ready(function() {
         charisma: "+1"
       };
       spells = {
-        cantrips: [],
-        levelOne: []};
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]};
       break;
 
     case "Monk":
@@ -607,8 +748,13 @@ $(document).ready(function() {
         charisma: "+1"
       };
       spells = {
-        cantrips: [],
-        levelOne: []};
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]
+      };
       break;
 
     case "Paladin":
@@ -662,7 +808,13 @@ $(document).ready(function() {
         wisdom: "+2",
         charisma: "+4"
       };
-      spells = {};
+      spells = {
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]};
       break;
 
     case "Ranger":
@@ -716,7 +868,13 @@ $(document).ready(function() {
         wisdom: "+2",
         charisma: "0"
       };
-      spells = {};
+      spells = {
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]};
       break;
 
     case "Rogue":
@@ -770,7 +928,13 @@ $(document).ready(function() {
         wisdom: "+1",
         charisma: "+2"
       };
-      spells = {};
+      spells = {
+        cantrips: [
+          "None"
+        ],
+        levelOne: [
+          "None"
+        ]};
       break;
 
     case "Sorcerer":
@@ -824,9 +988,7 @@ $(document).ready(function() {
         wisdom: "0",
         charisma: "+4"
       };
-      spells = {
-        cantrips: ["Mage Hand", "Prestidigitation", "Fire Bolt", "Light"],
-        levelOne: ["Shield", "Thunderwave"]};
+      getSpells("sorcerer");
       break;
 
     case "Warlock":
@@ -880,9 +1042,12 @@ $(document).ready(function() {
         wisdom: "+2",
         charisma: "+4"
       };
-      spells = {
-        cantrips: ["Eldritch Blast", "Prestidigitation"],
-        levelOne: ["Charm Person", "Hellish Rebuke"]};
+      $.get("http://www.dnd5eapi.co/api/classes/warlock/spells", function(data) {
+        console.log(data);
+        spells = {
+          cantrips: ["Eldritch Blast", "Prestidigitation"],
+          levelOne: ["Charm Person", "Hellish Rebuke"]};
+      });
       break;
 
     case "Wizard":
@@ -936,9 +1101,7 @@ $(document).ready(function() {
         wisdom: "+2",
         charisma: "+1"
       };
-      spells = {
-        cantrips: ["Mage Hand", "Fire Bolt", "Predstidigitation"],
-        levelOne: ["Charm Person", "Fog Cloud", "Color Spray", "Detect Magic", "Magic Missile", "Feather Fall"]};
+      getSpells("wizard");
       break;
     }
   }
