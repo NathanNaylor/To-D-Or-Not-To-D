@@ -524,7 +524,7 @@ $(document).ready(function() {
         wisdom: "+1",
         charisma: "+4"
       };
-      getSpells("bard")
+      getSpells("bard");
       break;
 
       //data case for cleric stats
