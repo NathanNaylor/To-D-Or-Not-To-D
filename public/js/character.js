@@ -23,13 +23,20 @@ $(document).ready(function() {
     getCharacters(data.id);
   });
 
-  $(function(){
-    $(".charSpells").on("click", function(){
-      alert("works");
-      console.log(this);
+  $(document).on("click",".spellsAlert", function(){
+    const QUERYURL = this.getAttribute("data-value");
+    $.get("http://www.dnd5eapi.co" + QUERYURL, function(data) {
+      console.log(data);
+      $(".spell-description").text("Description: ");
+      data.desc.forEach(element => {
+        $(".spell-description").append(element + "<br>");
+      });
+      $(".spell-name").text("Name: " + data.name);
+      $(".spell-range").text("Range: " + data.range);
+      $(".spell-duration").text("Duration: " + data.duration);
+      
     });
   });
-
   // getCharacters();
 
   function getCharacters(userID) {
@@ -98,14 +105,54 @@ $(document).ready(function() {
       console.log(data);
       switch(className){
       case "bard":
+        spells = {
+          cantrips: [data.results[6].name, data.results[8].name],
+          levelOne: [data.results[17].name, data.results[11].name, data.results[16].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[6].url, data.results[8].url],
+          levelOne: [data.results[17].url, data.results[11].url, data.results[16].url]
+        };
         break;
       case "cleric":
+        spells = {
+          cantrips: [data.results[4].name, data.results[5].name, data.results[6].name],
+          levelOne: [data.results[12].name, data.results[21].name, data.results[22].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[4].url, data.results[5].url, data.results[6].url],
+          levelOne: [data.results[12].url, data.results[21].url, data.results[22].url]
+        };
         break;
       case "druid":
+        spells = {
+          cantrips: [data.results[5].name, data.results[3].name],
+          levelOne: [data.results[13].name, data.results[18].name, data.results[21].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[5].url, data.results[3].url],
+          levelOne: [data.results[13].url, data.results[18].url, data.results[21].url]
+        };
         break;
       case "sorcerer":
+        spells = {
+          cantrips: [data.results[3].name, data.results[4].name, data.results[5].name, data.results[10].name],
+          levelOne: [data.results[27].name, data.results[30].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[3].url, data.results[4].url, data.results[5].url, data.results[10].url],
+          levelOne: [data.results[27].url, data.results[30].url]
+        };
         break;
       case "warlock":
+        spells = {
+          cantrips: [data.results[1].name, data.results[5].name],
+          levelOne: [data.results[7].name, data.results[10].name]
+        };
+        spellsURL = {
+          cantrips: [data.results[1].url, data.results[5].url],
+          levelOne: [data.results[7].url, data.results[10].url]
+        };
         break;
       case "wizard":
         spells = {
@@ -116,7 +163,6 @@ $(document).ready(function() {
           cantrips: [data.results[5].url, data.results[3].url, data.results[10].url],
           levelOne: [data.results[16].url, data.results[26].url, data.results[17].url, data.results[19].url, data.results[34].url, data.results[23].url]
         };
-        console.log(spellsURL);
         break;
       }
       
@@ -478,19 +524,7 @@ $(document).ready(function() {
         wisdom: "+1",
         charisma: "+4"
       };
-      $.get("http://www.dnd5eapi.co/api/classes/bard/spells", function(data) {
-        console.log(data);
-        spells = {
-          cantrips: [
-            "Prestidigitation",
-            "Vicious Mockery"
-          ],
-          levelOne: [
-            "Healing Word",
-            "Charm Person",
-            "Feather Fall"
-          ]};
-      });
+      getSpells("bard")
       break;
 
       //data case for cleric stats
@@ -545,20 +579,7 @@ $(document).ready(function() {
         wisdom: "+4",
         charisma: "+3"
       };
-      $.get("http://www.dnd5eapi.co/api/classes/cleric/spells", function(data) {
-        console.log(data);
-        spells = {
-          cantrips: [
-            "Sacred Flame",
-            "Spare The Dying",
-            "Thaumaturgy"
-          ],
-          levelOne: [
-            "Cure Wounds",
-            "Shield Of Faith",
-            "Sanctuary"
-          ]};
-      });
+      getSpells("cleric");
       break;
 
     case "Druid":
@@ -612,19 +633,7 @@ $(document).ready(function() {
         wisdom: "+4",
         charisma: "+1"
       };
-      $.get("http://www.dnd5eapi.co/api/classes/druid/spells", function(data) {
-        console.log(data);
-        spells = {
-          cantrips: [
-            "Shillelagh",
-            "Poison Spray"
-          ],
-          levelOne: [
-            "Faerie Fire",
-            "Longstrider",
-            "Thunderwave"
-          ]};
-      });
+      getSpells("druid");
       break;
 
     case "Fighter":
@@ -979,12 +988,7 @@ $(document).ready(function() {
         wisdom: "0",
         charisma: "+4"
       };
-      $.get("http://www.dnd5eapi.co/api/classes/sorcerer/spells", function(data) {
-        console.log(data);
-        spells = {
-          cantrips: ["Mage Hand", "Prestidigitation", "Fire Bolt", "Light"],
-          levelOne: ["Shield", "Thunderwave"]};
-      });
+      getSpells("sorcerer");
       break;
 
     case "Warlock":
