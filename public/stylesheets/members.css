@@ -1,10 +1,15 @@
 .navbar-brand {
 color:black
 }
+
+.navbtn {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
 .member-name{
     font-size: 22px;
     text-align: center;
-    margin-left: 470px;
     color:black;
     font-weight: 600;
 }
@@ -15,6 +20,12 @@ color:black
     font-weight: bold;
     color:black;
     margin-top:-15rem;
+    font-size: 4rem;
+}
+
+.namestyle {
+    font-size: 3rem;
+    font-weight: normal;
 }
 .pure-g{
     justify-content: center;
@@ -30,20 +41,30 @@ color:black
     background-color: black;
     height: 4rem;
     width: 12rem;
-    color:white
+    color:white;
+    padding-top: .5rem;
+    margin-bottom: 2rem;
+
+    
 }
 .button-xlarge1{
     background: rgb(28, 184, 65);
     display: block;
     margin: auto;
-    margin-top:.5rem;
+    margin-top:.68rem;
+    padding-top: .5rem;
+    height: 4rem;
+    margin-bottom: 2rem;
 }
 .button-xlarge2{
     background: rgb(202, 60, 60);
     margin: auto;
     display: block;
     margin: auto;
-    margin-top:.5rem;
+    margin-top:.68rem;
+    padding-top: .5rem;
+    height: 4rem;
+    margin-bottom: 2rem;
 }
 body{background-color:slategray}
 
@@ -56,6 +77,24 @@ body{background-color:slategray}
     margin-left: -6rem;
 }
 h1{color:slategray;}
+
+.generateBtn {
+    justify-content: center;
+    text-align: center;
+    height: 3rem;
+}
+
+.generateBtn1{
+    height: 5.2rem;
+    padding-top: 1rem;
+    font-size: 2.8rem;
+    padding-bottom: 3rem;
+}
+
+.userspec {
+    font-weight: bold;
+    color: black;
+}
 
 footer{
     background-image: url(https://cdn.dribbble.com/users/793805/screenshots/2429068/dungeon_pattern_repeating_black.jpg);
