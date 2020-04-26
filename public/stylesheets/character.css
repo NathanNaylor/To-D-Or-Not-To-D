@@ -2,9 +2,24 @@ body {
     background-color: sandybrown;
 }
 
+.c1container {
+    width:100%;
+}
+
 .container {
     width: 100%;
 }
+
+.navbtns {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.fl {
+    text-align: left;
+}
+
 
 
 #header {
@@ -13,6 +28,21 @@ body {
 
 #basic-info {
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.viewingwho {
+    text-align: center;
+    font-size: 8rem;
+}
+
+
+
+
+.basic-info {
+    text-align: center;
+    font-size: 6rem;
 }
 
 .intro {
@@ -29,63 +59,76 @@ body {
     border-style: solid;
     margin-bottom:0;
     border-bottom:0;
+    font-size: 6rem;
 }
 
 .c1name {
     border-style: solid;
     margin-top: 0;
     background-color: chartreuse;
-}
-
-.c2st {
-    border-style: solid;
-    margin-bottom: 0;
-    background-color: mediumorchid;
-}
-.c2std {
-    border-style: solid;
-    border-top: 0;
-    margin-top: 0;
-}
-
-.c2s {
-    border-style: solid;
-    margin-bottom: 0;
-    background-color: darkcyan;
-}
-.c2sd {
-    border-style: solid;
-    border-top: 0;
-    margin-top: 0;
-}
-
-.center {
-    text-align: center;
+    font-size: 4rem;
 }
 
 .c3stat {
     border-style: solid;
     margin-bottom: 0;
     border-bottom: 0;
-    width: 90%;
+    font-size: 6rem;
 }
 
 .c3name {
     border-style: solid;
     margin-top: 0;
-    width: 90%;
     background-color: aquamarine;
+    font-size: 3.3rem;
 }
+
+.c2st {
+    border-style: solid;
+    margin-bottom: 0;
+    background-color: mediumorchid;
+    font-size: 6rem;
+}
+.c2std {
+    border-style: solid;
+    border-top: 0;
+    margin-top: 0;
+    font-size: 4.4rem;
+}
+
+.c2s {
+    border-style: solid;
+    margin-bottom: 0;
+    background-color: darkcyan;
+    font-size: 6rem;
+}
+.c2sd {
+    border-style: solid;
+    border-top: 0;
+    margin-top: 0;
+    font-size: 4.4rem;
+}
+
+.center {
+    text-align: center;
+}
+
+
 
 .equalcenter {
     display:flex;
     justify-content: space-between;
 }
 
+.containerCenter {
+    justify-self: center;
+    margin: 0 auto;
+}
 
 
 .center {
     text-align: center;
+    
 }
 
 .equipment {
@@ -93,6 +136,7 @@ body {
     margin-bottom: 0;
     border-bottom:0;
     background-color: green;
+    font-size: 8rem;
     
 }
 .equipmentstats {
@@ -100,6 +144,7 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     background-color: darkseagreen;
+    font-size: 6rem;
 }
 
 .weapons {
@@ -107,6 +152,7 @@ body {
     margin-top: 0;
     border-top:0;
     margin-bottom: 0;
+    font-size: 4.5rem;
 }
 
 .armor {
@@ -115,12 +161,14 @@ body {
     margin-bottom: 0;
     border-top: 0;
     background-color: darkgray;
+    font-size: 6rem;
 }
 .armors {
     border-style: solid;
     margin-top: 0;
     border-top:0;
     margin-bottom: 0;
+    font-size: 4.5rem;
    
 }
 
@@ -130,6 +178,7 @@ body {
     margin-bottom: 0;
     border-top: 0;
     background-color: cadetblue;
+    font-size: 6rem;
 }
 
 .anothers {
@@ -137,34 +186,50 @@ body {
     margin-top: 0;
     border-top:0;
     margin-bottom: 0;
-
+    font-size: 4.5rem;
 }
 
 .spell {
     border-style: solid;
     margin-bottom: 0;
     background-color: orangered;
+    font-size: 6rem;
 }
 
 .spells{
     border-style: solid;
     border-top: 0;
     margin-top: 0;
+    font-size: 4.5rem;
 }
 
 .attack {
     border-style: solid;
     margin-bottom: 0;
     background-color: red;
+    font-size: 6rem;
 }
 
 .attacks {
     border-style: solid;
     margin-top: 0;
     border-top: 0;
+    font-size: 4.5rem;
 
 }
+
+.c3attd {
+    border-style: solid;
+    margin-top: 0;
+    border-top: 0;
+    font-size: 4.5;
+}
+
+
 h1{color: black;}
 .intro{background-color: gold; color: darkslateblue;}
 .dnd1{background-image: url(https://static0.srcdn.com/wordpress/wp-content/uploads/2019/09/Dungeons-and-Dragons-Alignments.jpg);display: list-item;height: 547px;}
-footer{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);font-size: 86px;display: list-item; position: sticky;}
+footer{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);font-size: 86px;display: list-item; position: sticky; }
+.dnd {
+    margin-top: 2rem;
+}
