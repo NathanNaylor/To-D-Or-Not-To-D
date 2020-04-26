@@ -175,7 +175,7 @@ $(document).ready(function() {
     }).then(() => {
       //each new element should have a function to serve the spells description via alert
       //using the matching spellsURL
-      $(".charSpells").append("<h4> Cantrips </h4>");
+      $(".cantHeader").append("Cantrips");
       spells.cantrips.forEach(element => {
         console.log(spellsURL.cantrips);
         //create an element for each selected spell
@@ -185,10 +185,10 @@ $(document).ready(function() {
         i++;
       });
       i = 0;
-      $(".charSpells").append("<h4> Level One Spells </h4>");
+      $(".l1spells").append("Level One Spells");
       spells.levelOne.forEach(element => {
 
-        $(".charSpells").append("<li class='spellsAlert' data-value="+ spellsURL.levelOne[i] +">"+ element + "</li>");
+        $(".l1spellslist").append("<li class='spellsAlert' data-value="+ spellsURL.levelOne[i] +">"+ element + "</li>");
         i++;
       });
     });
