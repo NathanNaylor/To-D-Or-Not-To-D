@@ -1,20 +1,23 @@
 body{
-    background-color: lightsteelblue;
+    background-color:black;
 }
 .generator{
     justify-content: center;
     border: double;
     text-align: center;
     font-weight: bold;
+    color:antiquewhite
 }
 .generator1{
     justify-content: center;
     border: hidden;
     text-decoration: underline;
+    color:red
 }
 .pure-g{justify-content: center;}
 
 header{background-image: url(https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_MM.jpg);display: list-item;font-size:150px ;}
+h2{color:black}
 h4{text-align: center;}
 
 h5{
@@ -31,5 +34,5 @@ h6{
     display:list-item; height: 204px; width: 800px; margin-left: 168px;
 
 }
-footer{background-image: url(http://students.expression.edu/alanadeocampo/files/2012/10/BlogHeaderNew2.jpg);font-size: 86px;display: list-item; margin-top: 593px; position: sticky;}
-
+footer{background-image: url(https://cdn.dribbble.com/users/793805/screenshots/2429068/dungeon_pattern_repeating_black.jpg);font-size: 86px;display: list-item; margin-top: 593px; position: sticky;margin-top: 17rem;}
+label{color:yellow}
