@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
-
+  let userInfo;
   init();
 
   function init() {
@@ -24,8 +24,10 @@ $(document).ready(function() {
     let currentCharacter = $(this).data("id");
     console.log(currentCharacter);
     console.log(typeof currentCharacter);
-    $.get("/api/user_data/1")
+    console.log(userInfo);
+    $.get("/api/user_data/" + userInfo[0].id)
       .then(function(data) {
+        console.log(data);
         return data[0].Characters[currentCharacter].id;
       })
       .then(data => {
@@ -43,6 +45,7 @@ $(document).ready(function() {
 
   function getCharacters(userID) {
     $.get("/api/user_data/" + userID, function(data) {
+      userInfo = data;
       for (var i = 0; i < data[0].Characters.length; i++) {
         var nameSection = $("<h3>");
         nameSection.addClass("new-character-style");
