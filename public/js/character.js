@@ -22,8 +22,8 @@ $(document).ready(function() {
     console.log(window.location.href);
     charID = window.location.href;
     //Use for non heroku
-    // charID = charID.substr(40);
-    charID = charID.substr(57);
+    charID = charID.substr(40);
+    // charID = charID.substr(57);
     console.log(charID);
     getCharacters(data.id, charID);
   });
@@ -47,6 +47,7 @@ $(document).ready(function() {
   function getCharacters(userID, id) {
     $.get("/api/user_data/" + userID, function(data) {
       console.log(data);
+      console.log(typeof(id));
       classStats(data[0].Characters[id].characterClass);
       classEquipment(data[0].Characters[id].characterClass);
 

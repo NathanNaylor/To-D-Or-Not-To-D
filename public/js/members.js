@@ -23,6 +23,7 @@ $(document).ready(function() {
   function handlePostDelete() {
     let currentCharacter = $(this).data("id");
     console.log(currentCharacter);
+    console.log(typeof currentCharacter);
     $.get("/api/user_data/1")
       .then(function(data) {
         return data[0].Characters[currentCharacter].id;
