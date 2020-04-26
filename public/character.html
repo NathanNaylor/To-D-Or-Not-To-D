@@ -12,17 +12,17 @@
   <link href="/stylesheets/character.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="container containerCenter">
   <div class="container">
     <div class="pure-g">
-      <div class="pure-u-sm-1 pure-u">
+      <div class="pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u">
         <!-- Nav Bar -->
         <div class="pure-menu pure-menu-horizontal">
           <ul class="pure-menu-list">
-            <a class="navbar-brand" href="/logout">
+            <a class="navbar-brand navbtns" href="/logout">
               Logout
             </a>
-            <a class="navbar-brand" href="/members">
+            <a class="navbar-brand navbtns" href="/members">
               Character Vault
             </a>
           </ul>
@@ -35,7 +35,7 @@
 
   <div id="basic-info" class="container">
     <div class="pure-g">
-      <div class="pure-u-sm-1">
+      <div class="pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u">
         <!-- Basic Data -->
         <h3 class="intro basic-info">Name: <span class="character-name"></span> , Class: <span class="character-class"></span>,
           Race: <span class="character-race"></span> Level: 1 , Alignment: <span class="character-alignment"></span>
@@ -52,7 +52,7 @@
       <!-- Column 1 -->
       <div class="pure-u-md-3-24 pure-u-sm-1 pure-u">
         <!-- Left Stat Row -->
-        <div class="container contentCenter">
+        <div class="container containerCenter">
             <h3 class="c1value STR"></h3>
             <h4 class="c1name">STR</h4>
 
@@ -74,48 +74,48 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="pure-u-md-7-24 pure-u-sm-1 pure-u">
+      <div class="pure-u-md-8-24 pure-u-sm-1 pure-u">
         <div class="container">
           <h3 class="c2st">Saving Throws</h3>
-          <h4 class="c2std">
-            <ul>
-              <li>Strength: <span class="strength"></span></li>
-              <li>Dexterity: <span class="dexterity"></span></li>
-              <li>Constitution: <span class="constitution"></span></li>
-              <li>Inteligence: <span class="inteligence"></span></li>
-              <li>Wisdom: <span class="wisdom"></span></li>
-              <li>Charisma: <span class="charisma"></span></li>
+          <h4 class="c2std ">
+            <ul class="fc">
+              <li class="fl">Strength: <span class="strength"></span></li>
+              <li class="fl">Dexterity: <span class="dexterity"></span></li>
+              <li class="fl">Constitution: <span class="constitution"></span></li>
+              <li class="fl">Inteligence: <span class="inteligence"></span></li>
+              <li class="fl">Wisdom: <span class="wisdom"></span></li>
+              <li class="fl">Charisma: <span class="charisma"></span></li>
             </ul>
           </h4>
           
           <h3 class="c2s">Skills</h3>
           <h4 class="c2sd">
             <ul>
-              <li>Acrobatics: <span class="acrobatics"></span></li>
-              <li>Animal Handling: <span class="animalHandling"></span></li>
-              <li>Arcana: <span class="arcana"></span></li>
-              <li>Athletics: <span class="athletics"></span></li>
-              <li>Deception: <span class="deception"></span></li>
-              <li>History: <span class="history"></span></li>
-              <li>Insight: <span class="insight"></span></li>
-              <li>Intimidation: <span class="intimidation"></span></li>
-              <li>Investigatoin: <span class="investigation"></span></li>
-              <li>Medicine: <span class="medicine"></span></li>
-              <li>Nature: <span class="nature"></span></li>
-              <li>Perception: <span class="perception"></span></li>
-              <li>Performance: <span class="performance"></span></li>
-              <li>Persuasion: <span class="persuasion"></span></li>
-              <li>Religion: <span class="religion"></span></li>
-              <li>Sleight Of Hand: <span class="sleightOfHand"></span></li>
-              <li>Stealth: <span class="stealth"></span></li>
-              <li>Survival: <span class="survival"></span></li>
+              <li class="fl">Acrobatics: <span class="acrobatics"></span></li>
+              <li class="fl">Animal Handling: <span class="animalHandling"></span></li>
+              <li class="fl">Arcana: <span class="arcana"></span></li>
+              <li class="fl">Athletics: <span class="athletics"></span></li>
+              <li class="fl">Deception: <span class="deception"></span></li>
+              <li class="fl">History: <span class="history"></span></li>
+              <li class="fl">Insight: <span class="insight"></span></li>
+              <li class="fl">Intimidation: <span class="intimidation"></span></li>
+              <li class="fl">Investigatoin: <span class="investigation"></span></li>
+              <li class="fl">Medicine: <span class="medicine"></span></li>
+              <li class="fl">Nature: <span class="nature"></span></li>
+              <li class="fl">Perception: <span class="perception"></span></li>
+              <li class="fl">Performance: <span class="performance"></span></li>
+              <li class="fl">Persuasion: <span class="persuasion"></span></li>
+              <li class="fl">Religion: <span class="religion"></span></li>
+              <li class="fl">Sleight Of Hand: <span class="sleightOfHand"></span></li>
+              <li class="fl">Stealth: <span class="stealth"></span></li>
+              <li class="fl">Survival: <span class="survival"></span></li>
             </ul>
           </h4>
         </div>
       </div>
 
       <!-- Column 3 -->
-      <div class="pure-u-md-10-24 pure-u-sm-1 pure-u">
+      <div class="pure-u-md-9-24 pure-u-sm-1 pure-u">
         <!-- Row 1 Equipment -->
         <div class="container">
           <h3 class="equipment">Equipment</h3>
@@ -130,7 +130,7 @@
             <h4 class="armor">Armor</h4>
             <h5 class="armors">
               <ul>
-                <li class="charArmor"></li>
+                <li class="charArmor fl"></li>
               </ul>
             </h5>
 
@@ -159,10 +159,10 @@
           </h4>
 
           <h3 class="attack">Spell Description</h3>
-          <h4 class="spell-name"></h4>
-          <h4 class="spell-range"></h4>
-          <h4 class="spell-duration"></h4>
-          <h4 class="spell-description"></h4>
+          <h4 class="spell-name fl"></h4>
+          <h4 class="spell-range fl"></h4>
+          <h4 class="spell-duration fl"></h4>
+          <h4 class="spell-description fl"></h4>
         </div>
 
       </div>

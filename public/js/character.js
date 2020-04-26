@@ -47,6 +47,7 @@ $(document).ready(function() {
   function getCharacters(userID, id) {
     $.get("/api/user_data/" + userID, function(data) {
       console.log(data);
+      console.log(typeof(id));
       classStats(data[0].Characters[id].characterClass);
       classEquipment(data[0].Characters[id].characterClass);
 
@@ -198,7 +199,7 @@ $(document).ready(function() {
       $.get("https://www.dnd5eapi.co" + element, function(data){
         console.log(data);
 
-        attackLi = "<li>" + data.name + ": " + 
+        attackLi = "<li class='fl'>" + data.name + ": " + 
         data.damage.damage_dice + " " + data.damage.damage_type.name + 
         " Damage" + "</li>";
 
@@ -351,10 +352,10 @@ $(document).ready(function() {
     }).then(() => {
       getAttacks();
       weaponsList.forEach(element => {
-        $(".weaponsList").append("<li>" + element + "</li>");
+        $(".weaponsList").append("<li class='fl'>" + element + "</li>");
       });
       miscEquipment.forEach(element => {
-        $(".miscEquipment").append("<li>" + element + "</li>");
+        $(".miscEquipment").append("<li class='fl'>" + element + "</li>");
       });
       $(".charArmor").text(armor);
 
