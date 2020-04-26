@@ -1,15 +1,19 @@
+.navbar-brand {
+color:black
+}
 .member-name{
     font-size: 22px;
     text-align: center;
     margin-left: 470px;
-    color:white;
+    color:black;
+    font-weight: 600;
 }
 .cVault{
     justify-content: center;
     border: double;
     text-align: center;
     font-weight: bold;
-    color:white;
+    color:black;
     margin-top:-15rem;
 }
 .pure-g{
@@ -23,9 +27,10 @@
     display: block;
     margin: auto;
     margin-top: 0.68rem;
-    background-color: white;
+    background-color: black;
     height: 4rem;
     width: 12rem;
+    color:white
 }
 .button-xlarge1{
     background: rgb(28, 184, 65);
@@ -40,21 +45,21 @@
     margin: auto;
     margin-top:.5rem;
 }
-body{background-color: black;}
+body{background-color:slategray}
 
 .ddpic{
     background-image: url(https://i.imgur.com/qu4S3kp.png);
     display: list-item;
     font-size: 226px; 
-    background-repeat: repeat-y;
+    background-repeat: repeat-x;
     margin-top: unset;
-    margin-left: 12rem;
+    margin-left: -6rem;
 }
-h1{color: black;}
+h1{color:slategray;}
 
 footer{
     background-image: url(https://cdn.dribbble.com/users/793805/screenshots/2429068/dungeon_pattern_repeating_black.jpg);
     font-size: 86px;
     display: list-item; 
     position: sticky; 
-    margin-top: 82px;}
+    margin-top: 70rem;}
