@@ -13,10 +13,10 @@
 </head>
 
 <body>
-  <!-- Nav Bar -->
   <div class="container">
     <div class="pure-g">
-      <div class="pure-u-md-1">
+      <div class="pure-u-sm-1 pure-u">
+        <!-- Nav Bar -->
         <div class="pure-menu pure-menu-horizontal">
           <ul class="pure-menu-list">
             <a class="navbar-brand" href="/logout">
@@ -26,75 +26,55 @@
               Character Vault
             </a>
           </ul>
-          <header class = "dnd1"></header>
+          <header class="dnd1"></header>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
-  <div id="header" class="container">
-    <div class="pure-g">
-      <div class="pure-u-sm-1 pure-u">
-        <h1> Viewing <span class="character-name"></span>'s Stats</h1>
-      </div>
 
-    </div>
-  </div>
-
-  <!-- Basic Data -->
   <div id="basic-info" class="container">
     <div class="pure-g">
       <div class="pure-u-sm-1">
-        <h3 class= "intro">Name: <span class="character-name"></span> , Class: <span class="character-class"></span>, Race: <span
-            class="character-race"></span> Level: 1 , Alignment: <span class="character-alignment"></span></h3>
+        <!-- Basic Data -->
+        <h3 class="intro basic-info">Name: <span class="character-name"></span> , Class: <span class="character-class"></span>,
+          Race: <span class="character-race"></span> Level: 1 , Alignment: <span class="character-alignment"></span>
+        </h3>
       </div>
     </div>
   </div>
 
-  <!-- ALL Stats -->
+  <!-- ALL Stats Container -->
   <div id="all-info" class="container">
+    <!-- All Stats Row -->
     <div class="pure-g">
 
       <!-- Column 1 -->
       <div class="pure-u-md-3-24 pure-u-sm-1 pure-u">
+        <!-- Left Stat Row -->
+        <div class="container contentCenter">
+            <h3 class="c1value STR"></h3>
+            <h4 class="c1name">STR</h4>
 
-        <div class="container">
-          <h3 class="c1value STR"></h3>
-          <h4 class="c1name">STR</h4>
-        </div>
+            <h3 class="c1value DEX"></h3>
+            <h4 class="c1name">DEX</h4>
 
-        <div class="container">
-          <h3 class="c1value DEX"></h3>
-          <h4 class="c1name">DEX</h4>
-        </div>
+            <h3 class="c1value CON"></h3>
+            <h4 class="c1name">CON</h4>
 
-        <div class="container">
+            <h3 class="c1value INT"></h3>
+            <h4 class="c1name">INT</h4>
 
-          <h3 class="c1value CON"></h3>
-          <h4 class="c1name">CON</h4>
-        </div>
+            <h3 class="c1value WIS"></h3>
+            <h4 class="c1name">WIS</h4>
 
-        <div class="container">
-
-          <h3 class="c1value INT"></h3>
-          <h4 class="c1name">INT</h4>
-        </div>
-
-        <div class="container">
-
-          <h3 class="c1value WIS"></h3>
-          <h4 class="c1name">WIS</h4>
-        </div>
-
-        <div class="container">
-          <h3 class="c1value CHA"></h3>
-          <h4 class="c1name">CHA</h4>
+            <h3 class="c1value CHA"></h3>
+            <h4 class="c1name">CHA</h4>
         </div>
       </div>
 
       <!-- Column 2 -->
-      <div class="pure-u-md-6-24 pure-u-sm-1 pure-u">
+      <div class="pure-u-md-7-24 pure-u-sm-1 pure-u">
         <div class="container">
           <h3 class="c2st">Saving Throws</h3>
           <h4 class="c2std">
@@ -107,9 +87,7 @@
               <li>Charisma: <span class="charisma"></span></li>
             </ul>
           </h4>
-        </div>
-
-        <div class="container">
+          
           <h3 class="c2s">Skills</h3>
           <h4 class="c2sd">
             <ul>
@@ -137,104 +115,90 @@
       </div>
 
       <!-- Column 3 -->
-      <div class="pure-u-md-8-24 pure-u-sm-1 pure-u">
-        <div class="pure-g">
-          <div class="container">
-            <div class="pure-u-md-8-24 ">
+      <div class="pure-u-md-10-24 pure-u-sm-1 pure-u">
+        <!-- Row 1 Equipment -->
+        <div class="container">
+          <h3 class="equipment">Equipment</h3>
 
-              <h3 class="c3stat"><span class="AC"></span></h3>
-              <h4 class="c3name">Armor Class</h4>
-              <h3 class="c3stat">+2</h3>
-              <h4 class="c3name">Proficiency</h4>
+          <div class="contaier">
+            <h4 class="equipmentstats">Weapons</h4>
+            <h5 class="weapons">
+              <ul class="weaponsList">
+              </ul>
+            </h5>
 
-            </div>
+            <h4 class="armor">Armor</h4>
+            <h5 class="armors">
+              <ul>
+                <li class="charArmor"></li>
+              </ul>
+            </h5>
 
+            <h4 class="another">Miscellaneous</h4>
+            <h5 class="anothers">
+              <ul class="miscEquipment">
+              </ul>
+            </h5>
 
-
-            <div class="pure-u-md-8-24 ">
-              <h3 class="c3stat"><span class="HP"></span></h3>
-              <h4 class="c3name">Hit Points</h4>
-              <h3 class="c3stat"><span class="HD"></span></h3>
-              <h4 class="c3name">Hit Dice</h4>
-
-            </div>
-
-
-
-            <div class="pure-u-md-8-24 ">
-              <h3 class="c3stat"><span class="INIT"></span></h3>
-              <h4 class="c3name">Initiative</h4>
-              <h3 class="c3stat">30</h3>
-              <h4 class="c3name">Speed</h4>
-
-            </div>
+            
           </div>
         </div>
 
-        <div class="pure-g">
-          <div class="container center">
-            <div class="pure-u-md-1">
-              <div class="container">
-              <h3 class= "equipment">Equipment</h3>
+        <!-- Row 2 Spells Attack and Description -->
+        <div class="container">
+          <h3 class="spell">Spells</h3>
+          <h4 class="spells">
+            <ul class="charSpells">
+            </ul>
+          </h4>
 
-                <h4 class = "equipmentstats">Weapons</h4>
-                <h5 class = "weapons">
-                  <ul class= "weaponsList">  
-                  </ul>
-                </h5>
-                
-                <h4 class = "armor">Armor</h4>
-                <h5 class = "armors">
-                  <ul>
-                    <li class="charArmor"></li>
-                  </ul>
-                </h5>
-                <h4 class = "another">Miscellaneous</h4>
-                <h5 class = "anothers">
-                  <ul class="miscEquipment">
-                  </ul>
-                </h5>
-              </div>
+          <h3 class="attack">Attack</h3>
+          <h4 class="attacks">
+            <ul class="charAttacks">
+            </ul>
+          </h4>
 
-            </div>
-          </div>
+          <h3 class="attack">Spell Description</h3>
+          <h4 class="spell-name"></h4>
+          <h4 class="spell-range"></h4>
+          <h4 class="spell-duration"></h4>
+          <h4 class="spell-description"></h4>
         </div>
 
       </div>
 
-        <!-- Column 4 -->
-        <div class="pure-u-md-7-24 pure-u-sm-1 pure-u">
-          <div class="container">
-            <h3 class="spell">Spells</h3>
-            <h4 class="spells">
-              <ul class="charSpells">
-              </ul>
-            </h4>
-          </div>
-  
-          <div class="container">
-            <h3 class="attack">Attack</h3>
-            <h4 class="attacks">
-              <ul class="charAttacks">
-              </ul>
-            </h4>
-          </div>
-          <div class="container">
-            <h3 class="attack">Spell Description</h3>
-            <h4 class="spell-name"></h4>
-            <h4 class="spell-range"></h4>
-            <h4 class="spell-duration"></h4>
-            <h4 class="spell-description"></h4>
-          </div>
+      <!-- Column 4 -->
+      <div class="pure-u-md-4-24 pure-u-sm-1 pure-u">
+
+        <!-- Right Stats -->
+        <div class="container">
+            <h3 class="c3stat"><span class="AC"></span></h3>
+            <h4 class="c3name">Armor Class</h4>
+
+            <h3 class="c3stat">+2</h3>
+            <h4 class="c3name">Proficiency</h4>
+
+            <h3 class="c3stat"><span class="HP"></span></h3>
+            <h4 class="c3name">Hit Points</h4>
+
+            <h3 class="c3stat"><span class="HD"></span></h3>
+            <h4 class="c3name">Hit Dice</h4>
+
+            <h3 class="c3stat"><span class="INIT"></span></h3>
+            <h4 class="c3name">Initiative</h4>
+
+            <h3 class="c3stat">30</h3>
+            <h4 class="c3name">Speed</h4>
         </div>
 
       </div>
     </div>
+  </div>
 
-    <footer class= "dnd"></footer>
+  <footer class="dnd"></footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/character.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/character.js"></script>
 
 </body>
 
