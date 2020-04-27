@@ -1048,12 +1048,7 @@ $(document).ready(function() {
         wisdom: "+2",
         charisma: "+4"
       };
-      $.get("http://www.dnd5eapi.co/api/classes/warlock/spells", function(data) {
-        console.log(data);
-        spells = {
-          cantrips: ["Eldritch Blast", "Prestidigitation"],
-          levelOne: ["Charm Person", "Hellish Rebuke"]};
-      });
+      getSpells("warlock")
       break;
 
     case "Wizard":
