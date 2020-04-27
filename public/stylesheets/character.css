@@ -242,6 +242,7 @@ body {
     margin-top: 0;
     border-top: 0;
     margin-bottom: 0;
+    background-color: white;
 }
 .l1spells {
     font-size: 4.5rem;
@@ -250,6 +251,7 @@ body {
     margin-top: 0;
     border-top: 0;
     margin-bottom: 0;
+    background-color: white;
 }
 
 .l1spellslist {
@@ -279,10 +281,4 @@ footer{background-image: url(http://students.expression.edu/alanadeocampo/files/
 .descriptionStyle {
     font-size: 3rem;
     margin-top: 2rem;
-}
-
-.
-
-.spell-name {
-
 }

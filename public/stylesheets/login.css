@@ -1,14 +1,45 @@
 /* login form title*/
-h2{font-size: 32px;color: yellow;}
+h1{font-size:5em;
+    margin-left:0rem;
+    color:aliceblue;
+    justify-content: center;
+    text-align: center;
+    font-family: cursive
+    ;}
+h2{font-size: 41px;color: yellow;
+font-family: monospace;
+text-decoration: underline;}
 
 /* background coloring */
 .background{background-color: black;}
-body{background-image: url(https://img2.wantitall.co.za/prodimages/graphics-more-dungeon-dice-pattern-for-fighting-dragons-premium-kraft-roll-gift-wrap-wrapping-paper__51ZXw9OImXL.jpg);background-repeat: no-repeat;background-position: center; background-color: black;}
+body{background-image: url(https://img2.wantitall.co.za/prodimages/graphics-more-dungeon-dice-pattern-for-fighting-dragons-premium-kraft-roll-gift-wrap-wrapping-paper__51ZXw9OImXL.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-color: black;
+    background-size: 104rem 94rem;
+}
 
 /* inside container */
-.label{color: yellow;}
+.label{color: yellow;
+font-size: 3rem;
+font-family: monospace;}
+
 .pure-form fieldset{margin: 24px;}
 
 /* sign up here at bottom */
-p{color: yellow;}
+p{
+    color: yellow;
+    font-family: monospace;
+    font-size:2rem;
+}
 a{color: aliceblue;}
+.pure-menu{
+    background-image: url(https://external-preview.redd.it/2BE1MI8aL8eFU8lXgR1rHPktnYI1OJ9fHmjZj_Zq3Y8.jpg?auto=webp&s=970b3554c412e5e92c583645a4efa2e549c2015c);
+    display:list-item;
+    font-size: 18rem;
+    background-repeat: no-repeat;
+}
+.pure-g{
+    margin-bottom: 50rem;
+    margin-top: 3rem;
+font-family: monospace;}
