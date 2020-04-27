@@ -13,58 +13,91 @@
 </head>
 
 <body>
+  <!-- Navbar -->
   <div class="pure-menu pure-menu-horizontal">
     <ul class="pure-menu-list">
-      <a class="navbar-brand" href="/logout">
+      <a class="navbar-brand navbtn" href="/logout">
         Logout
       </a>
-      <a class="navbar-brand" href="/members">
+      <a class="navbar-brand navbtn" href="/members">
         Character Vault
       </a>
     </ul>
   </div>
-  <header class="dndpic"></header>
-  <h3 class="generator">Welcome to the generator page!</h3>
-  <div class="container">
-  <h2 class ="dnd"></h2>
-</div>
-  <div class="container">
-    <div class="pure-g">
-      <div class="pure-u-md-1-3">
+
+  <!-- Headings and Images -->
+  <div class="pure-g">
+    <div class="pure-u-md-1 pure-u-lg-1 pure-u-sm-1 pure-u">
+      <header class="dndpic"></header>
+      <h3 class="generator">Welcome to the generator page!</h3>
+      <div class="container">
+        <h2 class="dnd"></h2>
+      </div>
+    </div>
+  </div>
 
 
-        <h4 class="generator1">Generate Form Below:</h4>
+  <div class="pure-g">
+    <div class="containerforcontainer">
+      <div class="pure-u-md-11-24 pure-u-sm-1 pure-u">
+        <div class="formcontainer">
+          <h4 class="generator1">Generator Form Below</h4>
           <form class="login pure-form pure-form-stacked">
             <fieldset>
               <!-- name -->
 
-              <label for="exampleInputEmail1">Character Name</label>
-              <input type="text" class="form-control" id="name-input" placeholder="Name goes here">
+              <label class="formlabels" for="exampleInputEmail1 ">Character Name</label>
+              <input type="text" class="form-control inputfields" id="name-input" placeholder="Name goes here">
 
               <!-- race -->
 
-              <label for="exampleInputEmail1">Character Race</label>
-              <input type="text" class="form-control" id="race-input" placeholder="Race goes here">
+              <label class="formlabels" for="exampleInputEmail1 ">Character Race</label>
+              <input type="text" class="form-control inputfields" id="race-input" placeholder="Race goes here">
 
               <!-- class -->
 
-              <label for="exampleInputEmail1">Character Class</label>
-              <input type="text" class="form-control" id="class-input" placeholder="Class goes Here">
+              <label class="formlabels" for="exampleInputEmail1 ">Character Class</label>
+              <input type="text" class="form-control inputfields" id="class-input" placeholder="Class goes Here">
 
               <!-- alignment -->
 
-              <label for="exampleInputEmail1">Character Alignment</label>
-              <input type="text" class="form-control" id="alignment-input" placeholder="Alignment goes here">
+              <label class="formlabels" for="exampleInputEmail1 ">Character Alignment</label>
+              <input type="text" class="form-control inputfields" id="alignment-input" placeholder="Alignment goes here">
 
 
-              <button type="submit" class="pure-button pure-button-primary">Submit</button>
+              <button type="submit" class="pure-button pure-button-primary submitbtn">Submit</button>
             </fieldset>
           </form>
+        </div>
       </div>
+
+      <div class="pure-u-md-13-24 pure-u-sm-1 pure-u ">
+        <div class="helpcontainer">
+
+          <h4 class="hg">Guide</h4>
+  
+          <h4 class= "guideHeader">For Character Name</h4>
+          <h5 class= "guidetext">Choose a name that suits your character</h5>
+          
+          <h4 class= "guideHeader">For Character Race</h4>
+          <h5 class= "guidetext">Choose a character's race of your choice</h5>
+          
+          <h4 class= "guideHeader">For Character Class</h4>
+          <h5 class= "guidetext">Choose one of the following character classes; Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin,
+            Ranger, Rogue, Sorcerer, Warlock, Wizard</h5>
+          
+          <h4 class= "guideHeader">For Character Alignment</h4>
+          <h5 class= "guidetext">Choose one of the following character Alignments; Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral,
+            Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil,</h5>
+        </div>
+      </div>
+
+    </div>
+
     </div>
 
   </div>
-  <footer class= "dnd2"></footer>
+  <footer class="dnd2"></footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="/js/generator.js"></script>

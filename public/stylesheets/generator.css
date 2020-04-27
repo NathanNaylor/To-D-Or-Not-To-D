@@ -1,18 +1,39 @@
 body{
-    background-color:black;
+    background-color:slategray;
+}
+.navbtn {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
 }
 .generator{
     justify-content: center;
     border: double;
     text-align: center;
-    font-weight: bold;
-    color:antiquewhite
+    color: black;
+    font-size: 6rem;
 }
 .generator1{
     justify-content: center;
     border: hidden;
     text-decoration: underline;
-    color:red
+    color: black;
+    font-size: 4rem;
+    width: 100%;
+}
+.hg{
+    justify-content: center;
+    border: hidden;
+    color: black;
+    font-size: 4rem;
+    width: 100%;
+    text-decoration: underline;
+    margin-bottom: 4rem;
+}
+.formlabels{
+    font-size: 4rem;
+    
 }
 .pure-g{justify-content: center;}
 
@@ -20,10 +41,10 @@ header{background-image: url(https://media.dnd.wizards.com/styles/story_banner/p
 h2{color:black}
 h4{text-align: center;}
 
-h5{
+/* h5{
     border: solid;
     font-size: 27px;
-}
+} */
 h6{
     border: solid;
     margin-top: -13px;
@@ -34,5 +55,51 @@ h6{
     display:list-item; height: 204px; width: 800px; margin-left: 168px;
 
 }
-footer{background-image: url(https://cdn.dribbble.com/users/793805/screenshots/2429068/dungeon_pattern_repeating_black.jpg);font-size: 86px;display: list-item; margin-top: 593px; position: sticky;margin-top: 17rem;}
+footer{background-image: url(https://cdn.dribbble.com/users/793805/screenshots/2429068/dungeon_pattern_repeating_black.jpg);font-size: 86px;display: list-item; margin-top: 70rem; position: sticky;margin-top: 30rem;}
 label{color:yellow}
+
+.formcontainer {
+    padding-top: 2rem;
+    margin-right: 3rem;
+    margin-left: 9rem;
+    justify-content: center;    
+}
+.helpcontainer{
+    padding-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 9rem;
+}
+
+.containerforcontainer{
+    max-width: 100%;
+}
+
+.guideHeader {
+    padding-top: 1rem;
+    font-size: 3.5rem;
+    border: solid;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+.guidetext{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: solid;
+    border-top: 0;
+    margin-top: 0;
+    font-size: 3.4rem;
+    word-spacing: .5rem;
+}
+
+.inputfields {
+    height: 5.5rem;
+    font-size: 3rem;
+}
+
+.submitbtn {
+    margin-top: 3.5rem;
+    height: 6rem;
+    width: 18rem;
+    font-size: 3rem;
+}
